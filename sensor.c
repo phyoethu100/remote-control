@@ -47,7 +47,7 @@ void UARTIntHandler(void)
 
 int main(void) {
 	
-	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+    SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -57,10 +57,10 @@ int main(void) {
     GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF); //enable GPIO port for LED
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1); //enable pin for LED PF2
-	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2); //enable pin for LED PF2
-	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3); //enable pin for LED PF2
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2); //enable pin for LED PF2
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3); //enable pin for LED PF2
 	
 	
     GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_4);
@@ -83,15 +83,15 @@ int main(void) {
     UARTCharPut(UART0_BASE, 'i');
     UARTCharPut(UART0_BASE, 'r');
     UARTCharPut(UART0_BASE, 'e');
-	UARTCharPut(UART0_BASE, 'c');
+    UARTCharPut(UART0_BASE, 'c');
     UARTCharPut(UART0_BASE, 't');
     UARTCharPut(UART0_BASE, 'i');
     UARTCharPut(UART0_BASE, 'o');
-	UARTCharPut(UART0_BASE, 'n');
+    UARTCharPut(UART0_BASE, 'n');
     UARTCharPut(UART0_BASE, ':');
     UARTCharPut(UART0_BASE, ' ');
-	UARTCharPut(UART0_BASE, '\n');
-	UARTCharPut(UART0_BASE, '\r');
+    UARTCharPut(UART0_BASE, '\n');
+    UARTCharPut(UART0_BASE, '\r');
 
     while (1) //let interrupt handler do the UART echo function
     {
@@ -100,11 +100,11 @@ int main(void) {
 			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0);
 			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0);
 			UARTCharPut(UART0_BASE, 'D');
-    		UARTCharPut(UART0_BASE, 'E');
-    		UARTCharPut(UART0_BASE, 'T');
-    		UARTCharPut(UART0_BASE, 'E');
-    		UARTCharPut(UART0_BASE, 'C');
-    		UARTCharPut(UART0_BASE, 'T');	
+    			UARTCharPut(UART0_BASE, 'E');
+    			UARTCharPut(UART0_BASE, 'T');
+    			UARTCharPut(UART0_BASE, 'E');
+    			UARTCharPut(UART0_BASE, 'C');
+    			UARTCharPut(UART0_BASE, 'T');	
 			UARTCharPut(UART0_BASE, '\n');
 			UARTCharPut(UART0_BASE, '\r');		
 
@@ -119,7 +119,7 @@ int main(void) {
  			UARTCharPut(UART0_BASE, 'F');
  			UARTCharPut(UART0_BASE, 'T');
  			UARTCharPut(UART0_BASE, '\n');
-			 UARTCharPut(UART0_BASE, '\r');					 
+			UARTCharPut(UART0_BASE, '\r');					 
 		}
         else { 	
 			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3);
