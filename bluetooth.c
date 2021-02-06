@@ -123,13 +123,13 @@ int main(void) {
     UARTCharPut(UART0_BASE, 'r');
     UARTCharPut(UART0_BASE, 'e');
     UARTCharPut(UART0_BASE, 'c');
-	UARTCharPut(UART0_BASE, 't');
+    UARTCharPut(UART0_BASE, 't');
     UARTCharPut(UART0_BASE, 'i');
     UARTCharPut(UART0_BASE, 'o');
     UARTCharPut(UART0_BASE, 'n');
     UARTCharPut(UART0_BASE, ':');
-	UARTCharPut(UART0_BASE, '\n');
-	UARTCharPut(UART0_BASE, '\r');
+    UARTCharPut(UART0_BASE, '\n');
+    UARTCharPut(UART0_BASE, '\r');
 
 
     while (1) //let interrupt handler do the UART echo function
